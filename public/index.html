@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prosta Aplikacja</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="#home" class="active">Strona Główna</a>
+            <a href="#services">Usługi</a>
+            <a href="#calculator">Kalkulator Pożyczki</a>
+            <a href="#find-us">Gdzie nas znaleźć</a>
+            <a href="statute.html">Regulamin</a>
+            <a href="registration.html" class="register-link">Rejestracja</a>
+        </div>
+    </header>
+    <main>
+        <section id="home">
+            <h1>Witaj w Aplikacji Usług Pożyczkowych!</h1>
+            <p>Znajdziesz tu wszystko, czego potrzebujesz dotyczące pożyczek. Nasza platforma zapewnia łatwy dostęp do szybkich i bezpiecznych rozwiązań finansowych. Niezależnie od tego, czy potrzebujesz krótkoterminowego wsparcia finansowego, czy długoterminowego rozwiązania kredytowego, jesteśmy tutaj, aby pomóc.</p>
+            <p>Odkryj prosty i przejrzysty proces aplikacji, uczciwe warunki oraz elastyczność dopasowaną do Twoich indywidualnych potrzeb. Nasze doświadczenie i profesjonalizm gwarantują najwyższą jakość usług.</p>
+        </section>
+
+        <section id="about">
+            <h2>O Nas</h2>
+            <p>Jesteśmy firmą specjalizującą się w szybkich i bezpiecznych pożyczkach. Nasza misja to zapewnienie łatwego dostępu do finansowania dla osób i przedsiębiorstw. Z dumą oferujemy indywidualne podejście do każdego klienta, dopasowując nasze usługi do ich unikalnych potrzeb.</p>
+            <p>Założona w 2010 roku, nasza firma szybko stała się liderem na rynku pożyczek, dzięki innowacyjnym rozwiązaniom i skupieniu na zadowoleniu klientów. Nasz zespół składa się z doświadczonych specjalistów, którzy zawsze służą pomocą i radą.</p>
+            <p>Wierzymy w przejrzystość i uczciwość, dlatego nasze warunki są zawsze jasne i proste. Dzięki naszej platformie online, proces ubiegania się o pożyczkę jest szybki i bezproblemowy, co pozwala naszym klientom na szybką realizację swoich planów i marzeń.</p>
+            <p>Zapraszamy do skorzystania z naszych usług i dołączenia do grona zadowolonych klientów!</p>
+        </section>
+        
+        <section id="testimonials">
+            <h2>Opinie Klientów</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial">
+                    <p class="testimonial-text">Bardzo profesjonalna obsługa, polecam!</p>
+                    <div class="stars">★★★★★</div>
+                    <p class="author">- Jan Kowalski</p>
+                </div>
+            
+                <div class="testimonial">
+                    <p class="testimonial-text">Szybka realizacja, jestem bardzo zadowolona.</p>
+                    <div class="stars">★★★★★</div>
+                    <p class="author">- Anna Nowak</p>
+                </div>
+            
+                <div class="testimonial">
+                    <p class="testimonial-text">Najlepsza i najkorzystniejsza oferta na rynku!</p>
+                    <div class="stars">★★★★☆</div>
+                    <p class="author">- Paweł Wiśniewski</p>
+                </div>
+            
+                <div class="testimonial">
+                    <p class="testimonial-text">Obsługa klienta na najwyższym poziomie.</p>
+                    <div class="stars">★★★★★</div>
+                    <p class="author">- Katarzyna Kowalska</p>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-text">Solidna firma, polecam każdemu kto potrzebuje szybkiej pożyczki.</p>
+                    <div class="stars">★★★★★</div>
+                    <p class="author">- Łukasz Brzęczyszczykiewicz</p>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-text">Nie miałam pięniędzy, a teraz je mam!</p>
+                    <div class="stars">★★★★★</div>
+                    <p class="author">- Joanna Krzyż</p>
+                </div>
+            </div>
+        </section>
+        <section id="calculator">
+            <h2>Kalkulator Pożyczki</h2>
+            <form id="loan-form">
+                <div class="form-group">
+                    <label for="amount">Kwota pożyczki:</label>
+                    <input type="range" id="amount" min="1000" max="50000" value="25000" step="1000" oninput="this.nextElementSibling.value = this.value">
+                    <output>25000</output>
+                </div>
+                <div class="form-group">
+                    <label for="interest">Oprocentowanie (% rocznie):</label>
+                    <input type="range" id="interest" min="1" max="15" value="5" step="0.1" oninput="this.nextElementSibling.value = this.value">
+                    <output>5</output>
+                </div>
+                <div class="form-group">
+                    <label for="years">Okres spłaty (w latach):</label>
+                    <input type="range" id="years" min="1" max="30" value="10" step="1" oninput="this.nextElementSibling.value = this.value">
+                    <output>10</output>
+                </div>
+                <div class="form-group">
+                    <input type="button" value="Oblicz" id="calculate">
+                </div>
+            </form>
+        
+            <div id="results" style="display:none;">
+                <h3>Wyniki:</h3>
+                <div id="monthly-payment"></div>
+                <div id="total-payment"></div>
+                <div id="total-interest"></div>
+            </div>
+        </section>
+        
+        <section id="find-us">
+            <h2>Gdzie nas znaleźć</h2>
+            <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=507&amp;hl=en&amp;q=warsaw&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://embed-googlemap.com">google map embed</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:507px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:507px;}.gmap_iframe {height:507px!important;}</style></div>    
+        </section>
+    </main>
+    <footer>
+        <div id="offline-warning" style="display:none;">Brak połączenia z Internetem. Niektóre funkcje mogą być niedostępne.</div>
+        <button id="enableNotifications">Włącz Powiadomienia</button>
+        <p>© 2024 Aplikacja Usług Pożyczkowych. Wszelkie prawa zastrzeżone.</p>
+        <p>Adres: Ulica, Miasto, Kraj</p>
+        <p>Kontakt: email@example.com | +48 123 456 789</p>
+    </footer>
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+
+        function updateOnlineStatus(event) {
+            var condition = navigator.onLine ? "online" : "offline";
+            if (condition === "offline") {
+                document.getElementById('offline-warning').style.display = 'block';
+            } else {
+                document.getElementById('offline-warning').style.display = 'none';
+            }
+        }
+
+        window.addEventListener('online',  updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

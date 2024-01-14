@@ -1,0 +1,16 @@
+{
+    "name": "Aplikacja pożyczkowa",
+    "short_name": "AppPoż",
+    "icons": [
+      {
+        "src": "icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "https://pozyczki-jb-zp.surge.sh",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "theme_color": "#000000"
+  }
+  

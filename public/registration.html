@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestracja - Aplikacja Usług Pożyczkowych</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="active">Strona Główna</a>
+            <a href="index.html">Usługi</a>
+            <a href="index.html">Kalkulator Pożyczki</a>
+            <a href="index.html">Gdzie nas znaleźć</a>
+            <a href="statute.html">Regulamin</a>
+            <a href="registration.html" class="register-link">Rejestracja</a>
+        </div>
+    </header>
+    
+
+    <main>
+        <section id="registration">
+            <h1>Rejestracja</h1>
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="name">Imię:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Hasło:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Potwierdź hasło:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="register-btn">Zarejestruj się</button>
+                </div>
+            </form>
+        </section>
+        
+    </main>
+
+    <footer>
+        <button id="enableNotifications">Włącz Powiadomienia</button>
+        <p>© 2024 Aplikacja Usług Pożyczkowych. Wszelkie prawa zastrzeżone.</p>
+        <p>Adres: Ulica, Miasto, Kraj</p>
+        <p>Kontakt: email@example.com | +48 123 456 789</p>
+    </footer>
+    <link rel="manifest" href="manifest.json">
+    <script src="script.js"></script>
+</body>
+</html>
