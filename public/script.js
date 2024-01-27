@@ -70,4 +70,74 @@ document.getElementById('calculate').addEventListener('click', function() {
     } else {
         alert('Proszę wprowadzić poprawne liczby');
     }
+    
 });
+function getUserLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        document.getElementById('location-display').innerHTML = "Geolokalizacja nie jest wspierana przez tę przeglądarkę.";
+    }
+}
+
+function showPosition(position) {
+    document.getElementById('location-display').innerHTML = "Szerokość geograficzna: " + position.coords.latitude +
+    "<br>Długość geograficzna: " + position.coords.longitude;
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            document.getElementById('location-display').innerHTML = "Użytkownik odmówił zgody na geolokalizację."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            document.getElementById('location-display').innerHTML = "Informacje o lokalizacji są niedostępne."
+            break;
+        case error.TIMEOUT:
+            document.getElementById('location-display').innerHTML = "Próba pobrania lokalizacji trwała zbyt długo."
+            break;
+        case error.UNKNOWN_ERROR:
+            document.getElementById('location-display').innerHTML = "Wystąpił nieznany błąd."
+            break;
+    }
+}
+function startSpeechRecognition(inputID) {
+    const voiceInput = document.getElementById(inputID);
+    
+    if ('webkitSpeechRecognition' in window) {
+      const recognition = new webkitSpeechRecognition();
+      
+      recognition.lang = 'pl-PL'; 
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      
+      recognition.onresult = function (event) {
+        const result = event.results[0][0].transcript;
+        voiceInput.value = result;
+      };
+      
+      recognition.start();
+      
+      setTimeout(function () {
+        recognition.stop();
+      }, 5000);
+    } else {
+      alert('Twoja przeglądarka nie obsługuje Web Speech API. Spróbuj innej przeglądarki.');
+    }
+  }
+
+  function register() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirm = document.getElementById('confirm-password').value;
+
+    if (name && email && password && confirm) {
+      alert('Rejestracja udana!');
+    } else {
+      alert('Wypełnij wszystkie pola przed rejestracją.');
+    }
+  }
+
+
+
